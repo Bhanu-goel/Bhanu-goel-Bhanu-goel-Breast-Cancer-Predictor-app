@@ -187,10 +187,10 @@ def add_predictions(input_data):
     if prediction[0] == 0:
         st.write("<span class='diagnosis Benign'>Benign</span>", unsafe_allow_html=True)
     else:
-        st.write("<span class='diagnosis Malicious'>Malicious</span>", unsafe_allow_html=True)
+        st.write("<span class='diagnosis Malignant'>Malignant</span>", unsafe_allow_html=True)
 
-    st.write("probability of being benign: ", round(prediction_proba[0][0],ndigits=2))
-    st.write("probability of being malicious: ", round(prediction_proba[0][1],ndigits=2))
+    st.write("Probability of being Benign: ", round(prediction_proba[0][0],ndigits=2))
+    st.write("Probability of being Malignant: ", round(prediction_proba[0][1],ndigits=2))
     
     st.write("This app connects directly to your cytology lab to assist in diagnosing breast cancer by analyzing tissue samples. Using a machine learning model, the app predicts whether a breast mass is benign or malignant based on measurements provided by the lab.")
 
