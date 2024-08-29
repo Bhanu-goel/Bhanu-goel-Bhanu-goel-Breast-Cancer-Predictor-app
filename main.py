@@ -185,20 +185,20 @@ def add_predictions(input_data):
     st.write('The Cell Cluster is:')
 
     if prediction[0] == 0:
-        st.write("<span class='diagnosis benign'>Benign</span>", unsafe_allow_html=True)
+        st.write("<span class='diagnosis Benign'>Benign</span>", unsafe_allow_html=True)
     else:
         st.write("<span class='diagnosis Malicious'>Malicious</span>", unsafe_allow_html=True)
 
-    st.write("probability of being benign: ", prediction_proba[0][0])
-    st.write("probability of being malicious: ", prediction_proba[0][1])
+    st.write("probability of being benign: ", round(prediction_proba[0][0],ndigits=2))
+    st.write("probability of being malicious: ", round(prediction_proba[0][1],ndigits=2))
     
-    st.write("This app can assist medical professionals in making a diagnosis, but should not be used as a substitute for a professional diagnosis.")
+    st.write("This app connects directly to your cytology lab to assist in diagnosing breast cancer by analyzing tissue samples. Using a machine learning model, the app predicts whether a breast mass is benign or malignant based on measurements provided by the lab.")
 
 
 def main():
     st.set_page_config(
-        page_title='Breast Cancer Predictor',
-        page_icon='female-doctor:',
+        page_title='Breast Cancer Prognasticator',
+        page_icon='male-doctor:',
         layout='wide',
         initial_sidebar_state='expanded'
     )
@@ -206,8 +206,8 @@ def main():
     input_data = add_sidebar()
 
     with st.container():
-        st.title('Breast Cancer Predictor')
-        st.write("Please connect this app to your cytology lab to help diagnose breast cancer form your tissue sample. This app predicts using a machine learning model whether a breast mass is benign or malignant based on the measurements it receives from your cytosis lab. You can also update the measurements by hand using the sliders in the sidebar. ")
+        st.title('Breast Cancer Prognasticator')
+        st.write("This app connects directly to your cytology lab to assist in diagnosing breast cancer by analyzing tissue samples. Using a machine learning model, the app predicts whether a breast mass is benign or malignant based on measurements provided by the lab. ")
 
     col1,col2 = st.columns([4,1])
 
