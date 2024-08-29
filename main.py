@@ -8,7 +8,7 @@ def get_clean_data():
 
     data = []
     #open and read the csv file
-    with open(r'C:\Users\NGCS\Documents\Breast Cancer Prediction\data\data.csv',mode='r') as file:
+    with open('data.csv',mode='r') as file:
         csv_reader = csv.DictReader(file)
         
         for row in csv_reader:
@@ -170,8 +170,8 @@ def get_radar_chart(input_data):
 
 
 def add_predictions(input_data):
-    model = pickle.load(open(r'C:\Users\NGCS\Documents\Breast Cancer Prediction\model\model.pkl','rb'))
-    scaler = pickle.load(open(r'C:\Users\NGCS\Documents\Breast Cancer Prediction\model\scaler.pkl','rb'))
+    model = pickle.load(open('model.pkl','rb'))
+    scaler = pickle.load(open('scaler.pkl','rb'))
 
     input_list = [float(value) for value in input_data.values()]
     input_array = [input_list]
